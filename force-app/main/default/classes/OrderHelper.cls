@@ -11,6 +11,7 @@ public with sharing class OrderHelper {
             }
         }
     }
+    // BLOQUEIA ALTERAÇÕES EM PEDIDOS COM O STATUS DE ATIVADO (ACTIVATED)
     public static void blockOrderActivated(Map<Id, Order> oldRecords, Map<Id, Order> newRecords) {
         for (Order order : newRecords.values()) {
             Order oldRecord = oldRecords.get(order.id);
