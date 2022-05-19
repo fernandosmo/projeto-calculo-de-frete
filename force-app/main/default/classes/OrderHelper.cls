@@ -1,6 +1,7 @@
 public with sharing class OrderHelper {
     public OrderHelper() {}
   
+    //BLOQUEIA ALTERAÇÃO DO CLIENTE DO PEDIDO
     public static void blockChangeAccount(Map<Id, Order> oldRecords, Map<Id, Order> newRecords) {
         for (Order order : newRecords.values()) {
             Order oldRecord = oldRecords.get(order.Id);
